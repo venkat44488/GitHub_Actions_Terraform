@@ -1,10 +1,8 @@
 name: Terraform plan
 
 on:
-  pull_request:
-    paths:
-      - "environments/**"
-      - ".github/workflows/terraform-plan.yml"
+  workflow_dispatch:
+    
   push:
     branches:
       - main
