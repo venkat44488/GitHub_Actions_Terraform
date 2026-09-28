@@ -2,14 +2,6 @@ name: Terraform plan
 
 on:
   workflow_dispatch:
-    
-  push:
-    branches:
-      - main
-    paths:
-      - "environments/**"
-      - ".github/workflows/terraform-plan.yml"
-
 permissions:
   contents: read
 
