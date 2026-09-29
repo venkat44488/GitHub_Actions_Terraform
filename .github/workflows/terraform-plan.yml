@@ -1,4 +1,4 @@
-name: Terraform plan
+name: Work Flow Of Terraform plan 
 
 on:
   workflow_dispatch:
@@ -28,27 +28,4 @@ jobs:
 
       - name: Create plan
         run: terraform plan -input=false -no-color
-  plan-gpus:
-    name: Plan-gpus (dev)
-    runs-on: gpu-runner
-    defaults:
-      run:
-        working-directory: environments/dev
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v3
-
-      - name: Check formatting
-        run: terraform fmt -check -recursive
-
-      - name: Initialize Terraform
-        run: terraform init -backend=false
-
-      - name: Validate configuration
-        run: terraform validate
-
-      - name: Create plan
-        run: terraform plan -input=false -no-color
+ 
